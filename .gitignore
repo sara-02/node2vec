@@ -12,3 +12,9 @@ build
 .project
 .settings
 .idea
+
+# env files
+env*/
+
+# emd file
+*.emd
