@@ -1,7 +1,7 @@
 import numpy as np
 import networkx as nx
 import random
-
+import sys
 
 class Graph():
     def __init__(self, nx_G, is_directed, p, q):
@@ -44,8 +44,10 @@ class Graph():
         walks = []
         nodes = list(G.nodes())
         print 'Walk iteration:'
+        sys.stdout.flush()
         for walk_iter in range(num_walks):
             print str(walk_iter+1), '/', str(num_walks)
+            sys.stdout.flush()
             random.shuffle(nodes)
             for node in nodes:
                 walks.append(self.node2vec_walk(walk_length=walk_length, start_node=node))
